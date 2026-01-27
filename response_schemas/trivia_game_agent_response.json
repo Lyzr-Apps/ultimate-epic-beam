@@ -1,0 +1,123 @@
+{
+  "agent_name": "Trivia Game Agent",
+  "agent_id": "69787493a75ef8a94cc4f20c",
+  "agent_purpose": "custom",
+  "description": "Turn-based trivia game response with game state, current question, scores, leaderboard, and winner announcement",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "game_status": "string",
+      "current_round": "number",
+      "current_turn": "string",
+      "question": {
+        "text": "string",
+        "category": "string"
+      },
+      "last_answer_result": {
+        "player": "string",
+        "answer_given": "string",
+        "correct_answer": "string",
+        "is_correct": "boolean",
+        "points_awarded": "number"
+      },
+      "scores": {
+        "player1": "number",
+        "player2": "number"
+      },
+      "leaderboard": [
+        {
+          "player": "string",
+          "score": "number"
+        }
+      ],
+      "winner": "null",
+      "game_message": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "game_status": "in_progress",
+      "current_round": 2,
+      "current_turn": "Player 2",
+      "question": {
+        "text": "Who was the first President of the United States?",
+        "category": "History"
+      },
+      "last_answer_result": {
+        "player": "Player 1",
+        "answer_given": "Au",
+        "correct_answer": "Gold",
+        "is_correct": true,
+        "points_awarded": 10
+      },
+      "scores": {
+        "player1": 10,
+        "player2": 0
+      },
+      "leaderboard": [
+        {
+          "player": "Player 1",
+          "score": 10
+        },
+        {
+          "player": "Player 2",
+          "score": 0
+        }
+      ],
+      "winner": null,
+      "game_message": "Correct! 'Au' is the chemical symbol for Gold. Player 2, it's your turn."
+    },
+    "metadata": {
+      "agent_name": "Trivia Game Agent",
+      "timestamp": "2023-07-05T14:30:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-01-27T08:18:48.735573",
+  "test_message_used": "Provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "game_status": "in_progress",
+      "current_round": 2,
+      "current_turn": "Player 2",
+      "question": {
+        "text": "Who was the first President of the United States?",
+        "category": "History"
+      },
+      "last_answer_result": {
+        "player": "Player 1",
+        "answer_given": "Au",
+        "correct_answer": "Gold",
+        "is_correct": true,
+        "points_awarded": 10
+      },
+      "scores": {
+        "player1": 10,
+        "player2": 0
+      },
+      "leaderboard": [
+        {
+          "player": "Player 1",
+          "score": 10
+        },
+        {
+          "player": "Player 2",
+          "score": 0
+        }
+      ],
+      "winner": null,
+      "game_message": "Correct! 'Au' is the chemical symbol for Gold. Player 2, it's your turn."
+    },
+    "metadata": {
+      "agent_name": "Trivia Game Agent",
+      "timestamp": "2023-07-05T14:30:00Z"
+    }
+  },
+  "test_passed": true
+}

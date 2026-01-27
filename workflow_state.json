@@ -1,0 +1,16 @@
+{
+  "workflow_created": true,
+  "agents_created": [
+    {
+      "name": "Trivia Game Agent",
+      "agent_id": "69787493a75ef8a94cc4f20c",
+      "type": "Single",
+      "status": "completed",
+      "response_schema_saved": true
+    }
+  ],
+  "total_agents": 1,
+  "completed_agents": 1,
+  "workflow_status": "complete",
+  "created_at": "2026-01-27T00:00:00Z"
+}

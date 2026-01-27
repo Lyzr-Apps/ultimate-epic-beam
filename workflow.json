@@ -1,0 +1,86 @@
+{
+  "nodes": [
+    {
+      "id": "player1_input",
+      "type": "Input",
+      "label": "Player 1 Input",
+      "nodeCategory": "input",
+      "position": {
+        "x": 100,
+        "y": 100
+      }
+    },
+    {
+      "id": "player2_input",
+      "type": "Input",
+      "label": "Player 2 Input",
+      "nodeCategory": "input",
+      "position": {
+        "x": 100,
+        "y": 300
+      }
+    },
+    {
+      "id": "trivia_agent",
+      "type": "Agent",
+      "label": "Trivia Game Agent",
+      "nodeCategory": "agent",
+      "position": {
+        "x": 400,
+        "y": 200
+      },
+      "data": {
+        "agent_id": "69787493a75ef8a94cc4f20c",
+        "agent_name": "Trivia Game Agent",
+        "description": "Manages turn-based trivia game for two players. Generates questions across categories, validates answers, tracks individual scores, maintains turn order, and displays live leaderboard. Announces winner when game concludes.",
+        "provider": "OpenAI",
+        "model": "gpt-4.1",
+        "temperature": 0.7,
+        "top_p": 0.95
+      }
+    },
+    {
+      "id": "output_node",
+      "type": "Output",
+      "label": "Game Output",
+      "nodeCategory": "end",
+      "position": {
+        "x": 700,
+        "y": 200
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_player1_to_trivia",
+      "source": "player1_input",
+      "target": "trivia_agent",
+      "type": "default"
+    },
+    {
+      "id": "edge_player2_to_trivia",
+      "source": "player2_input",
+      "target": "trivia_agent",
+      "type": "default"
+    },
+    {
+      "id": "edge_trivia_to_output",
+      "source": "trivia_agent",
+      "target": "output_node",
+      "type": "default"
+    }
+  ],
+  "agents": [
+    {
+      "agent_id": "69787493a75ef8a94cc4f20c",
+      "name": "Trivia Game Agent",
+      "type": "Single",
+      "description": "Manages turn-based trivia game for two players. Generates questions across categories, validates answers, tracks individual scores, maintains turn order, and displays live leaderboard. Announces winner when game concludes.",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "response_schema_file": "response_schemas/trivia_game_agent_response.json"
+    }
+  ]
+}
